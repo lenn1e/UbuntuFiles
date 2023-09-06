@@ -1,0 +1,12 @@
+After 'make' command in Pic1, all necessary files are compiled.
+
+Using 'ls' command in Pic2 to check all files created in the '/ch2' directory.
+
+Using 'sudo insmod simple.ko' in Pic3 but results in error 'Key was rejected by service'. This error means SecureBoot is enabled, forbidding any unsigned 3rd-party modules to be loaded into the kernel.
+
+Using 'sudo apt install mokutil', 'sudo mokutil --disable-verification' (not captured) would turn off SecureBoot.
+
+Now using 'sudo insmod simple.ko' should load this module into kernel. Double-check using 'lsmod | grep simple' in Pic4. Use 'dmesg | tail' in Pic5 and the line "Loading Module" should appear.
+
+Using 'sudo rmmod simple' to remove the module from kernel.
+Again use 'dmesg | tail' and the line "Removing Module" should appear.
